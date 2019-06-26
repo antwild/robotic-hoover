@@ -1,16 +1,12 @@
 require 'csv'
 specs = []
 
-# puts "Which file would you like to run?"
-# file = gets.chomp
+puts "Which file would you like to run?"
+file = gets.chomp
 
-# if file
-  CSV.foreach('input.txt') do |row|
-    specs << row
-  end
-# else
-#   puts "file doesn't exist"
-# end
+CSV.foreach(file) do |row|
+  specs << row
+end
 
 specs.map! do |element|
   element[0].split('')
@@ -32,14 +28,15 @@ directions.each do |direction|
   when "E" then hoover[0] += 1
   when "W" then hoover[0] -= 1
   end
-
-    dirt.each do |spot|
-      if hoover == spot
-        clean_counter += 1
-        dirt_left -= 1
-        dirt.delete(hoover)
-      end
+  hoover[0] = hoover[0].clamp(0, room[0])
+  hoover[1] = hoover[1].clamp(0, room[1])
+  dirt.each do |spot|
+    if hoover == spot
+      clean_counter += 1
+      dirt_left -= 1
+      dirt.delete(hoover)
     end
+  end
 end
 
 
