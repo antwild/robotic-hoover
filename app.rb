@@ -18,7 +18,6 @@ dirt = specs[(2..-2)].each do |array|
   array.map!(&:to_i)
 end
 directions = specs[-1].map!(&:capitalize)
-dirt_left = dirt.length
 clean_counter = 0
 
 directions.each do |direction|
@@ -33,7 +32,6 @@ directions.each do |direction|
   dirt.each do |spot|
     if hoover == spot
       clean_counter += 1
-      dirt_left -= 1
       dirt.delete(hoover)
     end
   end
