@@ -18,7 +18,7 @@ dirt = specs[(2..-2)].each do |array|
   array.map!(&:to_i)
 end
 directions = specs[-1].map!(&:capitalize)
-clean_counter = 0
+cleaned_counter = 0
 
 directions.each do |direction|
   case direction
@@ -31,11 +31,11 @@ directions.each do |direction|
   hoover[1] = hoover[1].clamp(0, room[1])
   dirt.each do |spot|
     if hoover == spot
-      clean_counter += 1
+      cleaned_counter += 1
       dirt.delete(hoover)
     end
   end
 end
 
 puts "#{hoover[0]} #{hoover[1]}"
-puts clean_counter
+puts cleaned_counter
