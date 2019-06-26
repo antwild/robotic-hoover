@@ -15,7 +15,7 @@ The goal of the program is to take the room dimensions, the locations of the dir
 - The number of patches of dirt the robot cleaned up
 
 ### How to run
-This program runs in the terminal. Please clone the repository with the following command:
+This program runs in the terminal. You will need to make sure that you have Ruby installed. Please clone the repository with the following command:
 
 `git clone https://github.com/antwild/robotic-hoover.git`
 
@@ -24,5 +24,5 @@ and then run the program with
 cd robotic-hoover
 ruby app.rb
 ```
-You will then be prompted to enter a file name, that will contain the imaginary hoover and imaginary room details as above. An example has been provided for you with `input.txt` but feel free to create your own and try it out!
+You will then be prompted to enter a file name, that will contain the imaginary hoover and imaginary room details as above. A file has been provided for you with `input.txt` but feel free to create your own and try it out!
 
